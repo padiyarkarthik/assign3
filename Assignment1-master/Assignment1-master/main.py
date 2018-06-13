@@ -19,7 +19,7 @@ app = Flask(__name__,template_folder="templates")
 
 import sqlite3
 ##comment to show
-
+#test
 server = 'kpmaster.database.windows.net'
 database = 'MySample'
 username = 'kpmaster'
