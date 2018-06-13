@@ -19,15 +19,15 @@ app = Flask(__name__,template_folder="templates")
 
 import sqlite3
 ##comment to show
-##################
-server = 'ilwin.database.windows.net'
-database = 'ilwin'
-username = 'ilwin'
-password = 'esxi@S5n'
+#test
+server = 'kpmaster.database.windows.net'
+database = 'MySample'
+username = 'kpmaster'
+password = 'karu@1965'
 driver = '{SQL Server}'
 
 cnxn = pypyodbc.connect("Driver={ODBC Driver 13 for SQL Server};"
-                        "Server=tcp:ilwin.database.windows.net;Database=ilwin;Uid=ilwin;Pwd=esxi@S5n;")
+                        "Server=tcp:kpmaster.database.windows.net;Database=MySample;Uid=kpmaster;Pwd=karu@1965;")
 # cnxn = pyodbc.connect(
 #     'DRIVER=' + driver + ';PORT=1433;SERVER=' + server + ';PORT=1443;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
 cursor = cnxn.cursor()
@@ -70,7 +70,7 @@ def uploadCSV():
         reader = csv.reader(f)
         columns = next(reader)
         print(columns)
-        query = 'insert into Earthquakethree ({0}) values ({1})'
+        query = 'insert into earthquakeus ({0}) values ({1})'
         query = query.format(','.join(columns), ','.join('?' * len(columns)))
 
         for data in reader:
@@ -88,7 +88,7 @@ def addrec():
 
     if request.method == 'POST':
         # print("inside")
-        query = "select count(*) from Earthquakethree where mag > 5.0"
+        query = "select count(*) from earthquakeus where mag > 5.0"
         print(query)
         cursor.execute(query)
         result=cursor.fetchone()
@@ -111,7 +111,7 @@ def search():
             length=datetime.now()-timedelta(days=7)
         if duration1=="month":
             length=datetime.now()-timedelta(days=30)
-        cursor.execute("select mag,latitude,longitude from Earthquakethree where (mag between "+range1+" and "+range2+") and timee > ?", (length,))
+        cursor.execute("select mag,latitude,longitude from earthquakeus where (mag between "+range1+" and "+range2+") and timee > ?", (length,))
         rows = cursor.fetchall()
         for row in rows:
              print(row)
@@ -132,7 +132,7 @@ def searchTwo():
                        "* COS(RADIANS(longpoint) - RADIANS(longitude))"
                        "+ SIN(RADIANS(latpoint))"
                        "* SIN(RADIANS(latitude)))) AS distance_in_km "
-                       "from Earthquakethree "
+                       "from earthquakeus "
                        "JOIN ("
                        "SELECT  "+latitude+" AS latpoint, "+longitude+" AS longpoint"
                        ") AS p ON 1=1 "
@@ -151,14 +151,14 @@ def searchthree():
            value=""
            rangeone = float(request.form['rangeone'])
            rangetwo = float(request.form['rangetwo'])
-           query = ("select count(*) from earthquakethree where gap between '"+str(rangeone)+"' and '"+str(rangetwo)+"'")
+           query = ("select count(*) from earthquakeus where gap between '"+str(rangeone)+"' and '"+str(rangetwo)+"'")
            print(query)
            cursor.execute(query)
            inBetween = cursor.fetchone()
            print(inBetween)
            value = "In betwen = "+str(inBetween)+" "
 
-           query = ("select count(*) from earthquakethree where gap < '"+str(rangeone)+"'")
+           query = ("select count(*) from earthquakeus where gap < '"+str(rangeone)+"'")
            print(query)
            cursor.execute(query)
            below = cursor.fetchone()
@@ -166,7 +166,7 @@ def searchthree():
            value = value + ", Below = " + str(below) + " "
            print(value)
 
-           query = ("select count(*) from earthquakethree where gap > '" + str(rangetwo) + "'")
+           query = ("select count(*) from earthquakeus where gap > '" + str(rangetwo) + "'")
            print(query)
            cursor.execute(query)
            above = cursor.fetchone()
@@ -188,7 +188,7 @@ def searchfour():
            locationSource = (request.form['locationSource'])
            mag = float(request.form['mag'])
 
-           query = ("select timee,latitude,longitude,place from earthquakethree where locationSource = '"+ locationSource +"' and mag > '"+str(mag)+"'"
+           query = ("select timee,latitude,longitude,place from earthquakeus where locationSource = '"+ locationSource +"' and mag > '"+str(mag)+"'"
                     +" and nst < magNst * 2")
            print(query)
            cursor.execute(query)
@@ -211,7 +211,7 @@ def searchfive():
                        "* COS(RADIANS(longpoint) - RADIANS(longitude))"
                        "+ SIN(RADIANS(latpoint))"
                        "* SIN(RADIANS(latitude)))) AS distance_in_km "
-                       "from Earthquakethree "
+                       "from earthquakeus "
                        "JOIN ("
                        "SELECT  "+latitude+" AS latpoint, "+longitude+" AS longpoint"
                        ") AS p ON 1=1 "
@@ -237,7 +237,7 @@ def searchfive():
 
 @app.route('/question')
 def question():
-        query=("select timee from earthquakethree where mag > 4.0")
+        query=("select timee from earthquakeus where mag > 4.0")
         print(query)
         cursor.execute(query)
         rows = cursor.fetchall()
@@ -366,7 +366,7 @@ def main():
         return render_template('cluster.html',cdist=cdist,pdict=pdict, disCluster = disCluster)
 
 def getdatafromdatabase():
-    query = "select latitude,longitude from Earthquakethree"
+    query = "select latitude,longitude from earthquakeus"
 
     print(query)
     cursor.execute(query)
