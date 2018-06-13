@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>K-Means Clustering</title>
+</head>
+<body>
+
+<center>
+<form method=POST action="/kmeans">
+    <div>
+        <h1>Ilwin Dcunha 1001390458</h1>
+    </div>
+    <div>
+        Enter the number of clusters : <input type = "text" name="clusters">
+        <br><br>
+    </div>
+    <button type="submit">kmeans</button>
+    <br><br><br>
+    {%for i in disCluster %}
+        {{i.dist}}<br>
+    {% endfor %}
+    <br>
+    {%for i in centroidssd %}
+        {{i}}
+    {% endfor %}
+    <br>
+    <br>
+    <br>
+    {%for i in pdict%}
+       No of points in cluster:{{i}}<br>
+    {% endfor %}
+    <br>
+    <br>
+    </form>
+
+    <form method=POST action="/show">
+        <button type="submit">Display Result</button>
+    </form>
+    <form method=POST action="/Bargraph">
+        <button type="submit">BarGraph</button>
+    </form>
+    <form method=POST action="/Piegraph">
+        <button type="submit">PieChart</button>
+    </form>
+</center>
+</body>
+</html>

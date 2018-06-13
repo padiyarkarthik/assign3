@@ -1,0 +1,1315 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/13/2018 8:16:14 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-SMFJGBG"
+  DTS:CreatorName="DESKTOP-SMFJGBG\Karthik Padiyar"
+  DTS:Description="SSIS Package Description"
+  DTS:DTSID="{F593BCE4-6E91-4B64-8A81-912005FFE2A0}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3025.39"
+  DTS:LocaleID="1033"
+  DTS:MaxErrorCount="0"
+  DTS:ObjectName="New Package"
+  DTS:VersionGUID="{634864D6-9802-4B0F-A95D-C47535B9D503}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5DBD9DF6-A8F8-4D35-B2C2-6D9741F46836}"
+      DTS:ObjectName="DestinationConnectionOLEDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=kpmaster.database.windows.net;User ID=kpmaster;Initial Catalog=earthquake;Provider=SQLNCLI11;Auto Translate=false;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAArNvNPYS4ZUOpeGLlml7e4AAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAA7erAvk1kPa3AMbRpY8EB+sJqFcmcLmXRW8MJb1V3RMgAAAAAOgAAAAAIAACAAAACD1baXYoRHIzb6GfKLLNcrU22d50ub3uIBAeFAxir7eSAAAABc8QtdbGOc6Uj/+4aVCOVMI7snF7Ba5NsNrsOGXLuUuUAAAAD0ElpPYSYJznb75JxpL1sFFcfiVPoFQYobOH9ld3urHkwa12Mesv+kHoSmEp4ppbj1UPZu01vhWbAtqDC/okOr</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6BC14109-421C-45D5-B36B-565F07C3937D}"
+      DTS:ObjectName="SourceConnectionFlatFile">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Karthik Padiyar\Documents\laptop_hp\Documents\MS_CS_SUMMER_2018\Cloud Computing\assignment3\all_month.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="time"
+              DTS:DTSID="{FA589074-0EAA-415F-8119-D4B32B847945}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="latitude"
+              DTS:DTSID="{54DD01E3-BFCB-413C-999F-DFC649AA091B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="longitude"
+              DTS:DTSID="{4FD64483-F576-4E63-BE58-640BB6E47746}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="depth"
+              DTS:DTSID="{BD663151-E682-4FC0-8B9E-3EE3A82A3F8A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="mag"
+              DTS:DTSID="{79954FFD-E8A0-4D35-A0E1-77AF863D4442}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="magType"
+              DTS:DTSID="{5D9B59A8-D75E-4B86-A915-1ED57DE08FCD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nst"
+              DTS:DTSID="{983DA163-2853-4052-9723-96C31BE9DA2A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gap"
+              DTS:DTSID="{3E51A096-505E-4908-BFC4-BB0D577BDCB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dmin"
+              DTS:DTSID="{0684A256-1649-4BA9-91F1-764E608F1C50}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="rms"
+              DTS:DTSID="{81A474AC-75BE-4364-AE7B-480676DADA2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="net"
+              DTS:DTSID="{BC648E39-67CC-4AD2-95E1-9E8BA2A9A285}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{F98373E9-0381-4903-9C3F-F3C5B90D915F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="updated"
+              DTS:DTSID="{BD27A4F3-2638-4E08-B3E7-391B19384F78}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="place"
+              DTS:DTSID="{7AB105BB-6977-48CC-B53C-D307573EAF79}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="type"
+              DTS:DTSID="{F60F2FCC-1200-4326-8CF0-87B63738F641}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="horizontalError"
+              DTS:DTSID="{21C7D972-98A9-4906-9394-A5396A45C01D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="depthError"
+              DTS:DTSID="{01DB080D-3796-41D9-8048-3B7DB5DFC607}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="magError"
+              DTS:DTSID="{1DB63A9A-5E40-4A6F-9301-65F292BA8BC9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="magNst"
+              DTS:DTSID="{4543CA58-BA10-4A7D-B20B-BE2778E49510}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="status"
+              DTS:DTSID="{3499B9B3-DBF0-4E32-8F1E-E7535C045249}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="locationSource"
+              DTS:DTSID="{B64604CF-58E4-42F3-95B8-DEB8CB032548}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="450"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="magSource"
+              DTS:DTSID="{C97A1FED-ED43-4E86-A56D-E01AD1ACCEA9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task 1"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:DelayValidation="True"
+      DTS:DTSID="{561CC7A8-DDA0-48F6-80F3-D7EC274E52D1}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task 1"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          defaultBufferSize="3145728"
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task 1\Destination - all_month"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destination - all_month"
+              usesDispositions="true"
+              validateExternalMetadata="False"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[all_month]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Destination - all_month.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DestinationConnectionOLEDB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[time]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="time"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[time]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[latitude]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="latitude"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[latitude]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[latitude]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[longitude]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="longitude"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[longitude]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[longitude]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[depth]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="depth"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[depth]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[depth]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[mag]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="mag"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[mag]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[mag]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[magType]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="magType"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magType]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magType]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[nst]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="nst"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[nst]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[nst]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[gap]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="gap"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[gap]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[gap]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[dmin]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="dmin"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[dmin]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[dmin]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[rms]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="rms"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[rms]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[rms]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[net]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="net"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[net]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[net]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[id]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="id"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[id]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[id]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[updated]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="updated"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[updated]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[updated]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[place]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="place"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[place]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[place]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[type]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="type"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[type]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[type]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[horizontalError]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="horizontalError"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[horizontalError]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[horizontalError]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[depthError]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="depthError"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[depthError]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[depthError]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[magError]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="magError"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magError]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magError]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[magNst]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="magNst"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magNst]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magNst]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[status]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="status"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[status]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[status]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[locationSource]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="locationSource"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[locationSource]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[locationSource]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].Columns[magSource]"
+                      cachedDataType="wstr"
+                      cachedLength="450"
+                      cachedName="magSource"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magSource]"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magSource]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[time]"
+                      dataType="wstr"
+                      length="450"
+                      name="time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[latitude]"
+                      dataType="wstr"
+                      length="450"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[longitude]"
+                      dataType="wstr"
+                      length="450"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[depth]"
+                      dataType="wstr"
+                      length="450"
+                      name="depth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[mag]"
+                      dataType="wstr"
+                      length="450"
+                      name="mag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magType]"
+                      dataType="wstr"
+                      length="450"
+                      name="magType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[nst]"
+                      dataType="wstr"
+                      length="450"
+                      name="nst" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[gap]"
+                      dataType="wstr"
+                      length="450"
+                      name="gap" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[dmin]"
+                      dataType="wstr"
+                      length="450"
+                      name="dmin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[rms]"
+                      dataType="wstr"
+                      length="450"
+                      name="rms" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[net]"
+                      dataType="wstr"
+                      length="450"
+                      name="net" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="450"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[updated]"
+                      dataType="wstr"
+                      length="450"
+                      name="updated" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[place]"
+                      dataType="wstr"
+                      length="450"
+                      name="place" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="450"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[horizontalError]"
+                      dataType="wstr"
+                      length="450"
+                      name="horizontalError" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[depthError]"
+                      dataType="wstr"
+                      length="450"
+                      name="depthError" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magError]"
+                      dataType="wstr"
+                      length="450"
+                      name="magError" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magNst]"
+                      dataType="wstr"
+                      length="450"
+                      name="magNst" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="450"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[locationSource]"
+                      dataType="wstr"
+                      length="450"
+                      name="locationSource" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input].ExternalColumns[magSource]"
+                      dataType="wstr"
+                      length="450"
+                      name="magSource" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Destination - all_month.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - all_month.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Destination - all_month.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Destination - all_month.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task 1\Source - all_month_csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Source - all_month_csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task 1\Source - all_month_csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  connectionManagerRefId="Package.ConnectionManagers[SourceConnectionFlatFile]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[time]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[time]"
+                      name="time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[latitude]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[latitude]"
+                      name="latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[longitude]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[longitude]"
+                      name="longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[depth]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[depth]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[depth]"
+                      name="depth"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[mag]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[mag]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[mag]"
+                      name="mag"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magType]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magType]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magType]"
+                      name="magType"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[nst]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[nst]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[nst]"
+                      name="nst"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[gap]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[gap]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[gap]"
+                      name="gap"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[dmin]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[dmin]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[dmin]"
+                      name="dmin"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[rms]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[rms]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[rms]"
+                      name="rms"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[net]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[net]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[net]"
+                      name="net"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[id]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[id]"
+                      name="id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[updated]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[updated]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[updated]"
+                      name="updated"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[place]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[place]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[place]"
+                      name="place"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[type]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[type]"
+                      name="type"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[horizontalError]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[horizontalError]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[horizontalError]"
+                      name="horizontalError"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[depthError]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[depthError]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[depthError]"
+                      name="depthError"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magError]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magError]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magError]"
+                      name="magError"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magNst]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magNst]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magNst]"
+                      name="magNst"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[status]"
+                      name="status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[locationSource]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[locationSource]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[locationSource]"
+                      name="locationSource"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magSource]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magSource]"
+                      length="450"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].Columns[magSource]"
+                      name="magSource"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[time]"
+                      dataType="wstr"
+                      length="450"
+                      name="time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[latitude]"
+                      dataType="wstr"
+                      length="450"
+                      name="latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[longitude]"
+                      dataType="wstr"
+                      length="450"
+                      name="longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[depth]"
+                      dataType="wstr"
+                      length="450"
+                      name="depth" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[mag]"
+                      dataType="wstr"
+                      length="450"
+                      name="mag" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magType]"
+                      dataType="wstr"
+                      length="450"
+                      name="magType" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[nst]"
+                      dataType="wstr"
+                      length="450"
+                      name="nst" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[gap]"
+                      dataType="wstr"
+                      length="450"
+                      name="gap" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[dmin]"
+                      dataType="wstr"
+                      length="450"
+                      name="dmin" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[rms]"
+                      dataType="wstr"
+                      length="450"
+                      name="rms" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[net]"
+                      dataType="wstr"
+                      length="450"
+                      name="net" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[id]"
+                      dataType="wstr"
+                      length="450"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[updated]"
+                      dataType="wstr"
+                      length="450"
+                      name="updated" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[place]"
+                      dataType="wstr"
+                      length="450"
+                      name="place" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[type]"
+                      dataType="wstr"
+                      length="450"
+                      name="type" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[horizontalError]"
+                      dataType="wstr"
+                      length="450"
+                      name="horizontalError" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[depthError]"
+                      dataType="wstr"
+                      length="450"
+                      name="depthError" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magError]"
+                      dataType="wstr"
+                      length="450"
+                      name="magError" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magNst]"
+                      dataType="wstr"
+                      length="450"
+                      name="magNst" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[status]"
+                      dataType="wstr"
+                      length="450"
+                      name="status" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[locationSource]"
+                      dataType="wstr"
+                      length="450"
+                      name="locationSource" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output].ExternalColumns[magSource]"
+                      dataType="wstr"
+                      length="450"
+                      name="magSource" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task 1.Paths[Flat File Source Output]"
+              endId="Package\Data Flow Task 1\Destination - all_month.Inputs[Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Data Flow Task 1\Source - all_month_csv.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Preparation SQL Task 1"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:DTSID="{3F3108B4-57A5-4645-B8AF-05AD427575E3}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:FailPackageOnFailure="True"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Preparation SQL Task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5DBD9DF6-A8F8-4D35-B2C2-6D9741F46836}"
+          SQLTask:SqlStatementSource="CREATE TABLE [dbo].[all_month] (&#xA;[time] nvarchar(450),&#xA;[latitude] nvarchar(450),&#xA;[longitude] nvarchar(450),&#xA;[depth] nvarchar(450),&#xA;[mag] nvarchar(450),&#xA;[magType] nvarchar(450),&#xA;[nst] nvarchar(450),&#xA;[gap] nvarchar(450),&#xA;[dmin] nvarchar(450),&#xA;[rms] nvarchar(450),&#xA;[net] nvarchar(450),&#xA;[id] nvarchar(450),&#xA;[updated] nvarchar(450),&#xA;[place] nvarchar(450),&#xA;[type] nvarchar(450),&#xA;[horizontalError] nvarchar(450),&#xA;[depthError] nvarchar(450),&#xA;[magError] nvarchar(450),&#xA;[magNst] nvarchar(450),&#xA;[status] nvarchar(450),&#xA;[locationSource] nvarchar(450),&#xA;[magSource] nvarchar(450)&#xA;)&#xA;GO&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[{4814201A-D40A-4A27-BAD2-C16E62410653\}]"
+      DTS:CreationName=""
+      DTS:DTSID="{4814201A-D40A-4A27-BAD2-C16E62410653}"
+      DTS:From="Package\Preparation SQL Task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="{4814201A-D40A-4A27-BAD2-C16E62410653}"
+      DTS:To="Package\Data Flow Task 1" />
+  </DTS:PrecedenceConstraints>
+</DTS:Executable>
